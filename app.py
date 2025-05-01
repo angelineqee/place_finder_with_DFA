@@ -51,3 +51,9 @@ if paragraph.strip():
             "dfa_verdicts.csv",
             "text/csv",
         )
+
+    # ---- Tab 2: boldfaced paragraph ----
+    with tab_para:
+        st.markdown(bold_para, unsafe_allow_html=True)
+else:
+    st.info("Enter a paragraph above and results will appear instantly.")
