@@ -33,6 +33,19 @@ def build_dfa() -> tuple[DFA, int]:
 def scan_paragraph(
     paragraph: str, dfa: DFA, max_len: int
 ) -> tuple[List[Tuple[str, bool]], str]:
+    """
+    Parameters
+    ----------
+    paragraph : raw user text
+    dfa       : built DFA
+    max_len   : longest phrase length (in words)
+
+    Returns
+    -------
+    verdicts        : list[(token|phrase, accepted?)]
+    bold_paragraph  : the paragraph with accepted items **boldfaced**
+                      (Markdown syntax, safe from nested bold)
+    """
     # ---- tokenise ----
     tokens = [tok for w in paragraph.split() if (tok := strip_outer_punct(w))]
 
