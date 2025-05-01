@@ -1,7 +1,3 @@
-Here’s a rewritten version of your README in a more natural, team-based tone. I've made the structure cleaner, used “we” throughout, and made the writing more direct and consistent.
-
----
-
 # Place-Finder DFA
 
 Group 7 (_Angeline_, _Dean_ and _Jun Jie_) built a compact, working **Deterministic Finite Automaton (DFA)** web app that:
