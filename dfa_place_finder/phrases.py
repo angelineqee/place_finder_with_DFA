@@ -11,4 +11,17 @@ ACCEPTED_PHRASES: list[str] = [
     "East Asia Summit", "Organisation of Islamic Cooperation",
     "Asia-Pacific Economic Cooperation", "Commonwealth of Nations",
     "Non-Aligned Movement",
+
+    # Newly added entries
+    "UnitedStates", "Canada", "Mexico", "Brazil", "Argentina", "Chile",
+    "Colombia", "Peru", "Venezuela", "Ecuador", "UnitedKingdom", "France",
+    "Germany", "Italy", "Spain", "Portugal", "Netherlands", "Belgium",
+    "Sweden", "Norway", "Denmark", "Finland", "Poland", "Austria",
+    "Switzerland", "Russia", "Ukraine", "Turkey", "Greece", "CzechRepublic",
+    "China", "Japan", "SouthKorea", "India", "Pakistan", "Bangladesh",
+    "Indonesia", "Vietnam", "Thailand", "Malaysia", "Philippines",
+    "Australia", "NewZealand", "Egypt", "South Africa", "Nigeria",
+    "Kenya", "Morocco", "Algeria", "Ghana", "Saudi Arabia",
+    "UnitedArabEmirates", "Israel", "Iran", "Iraq", "Afghanistan",
+    "Kazakhstan", "Uzbekistan", "Qatar", "Singapore"
 ]
