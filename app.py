@@ -13,3 +13,14 @@ def _get_dfa():
 
 dfa, MAX_LEN = _get_dfa()
 
+# ----------------------------------------------------------------------
+#  UI – input
+# ----------------------------------------------------------------------
+st.title("DFA Word / Phrase Highlighter")
+
+paragraph = st.text_area(
+    "Enter (or paste) a paragraph:",
+    height=250,
+    placeholder="Type your paragraph here…",
+)
+
