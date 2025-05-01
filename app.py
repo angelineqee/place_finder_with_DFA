@@ -24,3 +24,8 @@ paragraph = st.text_area(
     placeholder="Type your paragraph here…",
 )
 
+# ----------------------------------------------------------------------
+#  Run DFA + show results
+# ----------------------------------------------------------------------
+if paragraph.strip():
+    verdicts, bold_para = scan_paragraph(paragraph, dfa, MAX_LEN)
