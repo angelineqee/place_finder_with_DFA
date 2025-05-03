@@ -17,6 +17,7 @@ class DFA:
 
     def __init__(self) -> None:
         self._root = self._Node()
+        self._trap_node = self._Node()
 
     def insert(self, word: str) -> None:
         node = self._root
@@ -30,6 +31,10 @@ class DFA:
             if ch in string.punctuation:          # ignore interior punct
                 continue
             if ch not in node.children:
-                return False
-            node = node.children[ch]
+                node = self._trap_node
+                break
+            else:
+                node = node.children[ch]
+        if node == self._trap_node:
+            return False
         return node.is_final
