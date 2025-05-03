@@ -47,15 +47,15 @@ def scan_paragraph(
                       (Markdown syntax, safe from nested bold)
     """
     # ---- tokenise ----
-    tokens = [tok for w in paragraph.split() if (tok := strip_outer_punct(w))]
+    tokens = [tok for word in paragraph.split() if (tok := strip_outer_punct(word))]
 
     verdicts: list[tuple[str, bool]] = []
     accepted_set: set[str] = set()
 
-    i, n = 0, len(tokens)
-    while i < n:
+    i, tokens_len = 0, len(tokens)
+    while i < tokens_len:
         match = None
-        for L in range(min(max_len, n - i), 0, -1):
+        for L in range(min(max_len, tokens_len - i), 0, -1):
             cand = " ".join(tokens[i : i + L])
             if dfa.accepts(cand):
                 match = cand
