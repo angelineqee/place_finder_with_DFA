@@ -67,9 +67,9 @@ def scan_paragraph(
             i += len(match.split())
         else:
             tok = tokens[i]
-            ok = dfa.accepts(tok)
-            verdicts.append((tok, ok))
-            if ok:
+            is_accepted = dfa.accepts(tok)
+            verdicts.append((tok, is_accepted))
+            if is_accepted:
                 accepted_set.add(tok)
             i += 1
 
