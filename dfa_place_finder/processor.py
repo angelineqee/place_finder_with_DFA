@@ -3,7 +3,7 @@
 High-level operations:
 
 • build_dfa()              → ready-made DFA instance + max phrase length
-• scan_paragraph(text, dfa, max_len)
+• scan_paragraph(text, dfa, paragraph_max_len)
       returns (verdicts, bold_markdown)
 """
 
@@ -31,14 +31,14 @@ def build_dfa() -> tuple[DFA, int]:
 #  (2) scan_paragraph
 # ------------------------------------------------------------------ #
 def scan_paragraph(
-    paragraph: str, dfa: DFA, max_len: int
+    paragraph: str, dfa: DFA, paragraph_max_len: int
 ) -> tuple[List[Tuple[str, bool]], str]:
     """
     Parameters
     ----------
     paragraph : raw user text
     dfa       : built DFA
-    max_len   : longest phrase length (in words)
+    paragraph_max_len   : longest phrase length (in words)
 
     Returns
     -------
@@ -55,7 +55,7 @@ def scan_paragraph(
     i, tokens_len = 0, len(tokens)
     while i < tokens_len:
         match = None
-        for L in range(min(max_len, tokens_len - i), 0, -1):
+        for L in range(min(paragraph_max_len, tokens_len - i), 0, -1):
             candidate = " ".join(tokens[i : i + L])
             if dfa.accepts(candidate):
                 match = candidate
