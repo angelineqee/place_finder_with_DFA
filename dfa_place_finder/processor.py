@@ -56,9 +56,9 @@ def scan_paragraph(
     while i < tokens_len:
         match = None
         for L in range(min(max_len, tokens_len - i), 0, -1):
-            cand = " ".join(tokens[i : i + L])
-            if dfa.accepts(cand):
-                match = cand
+            candidate = " ".join(tokens[i : i + L])
+            if dfa.accepts(candidate):
+                match = candidate
                 break
 
         if match:
